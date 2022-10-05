@@ -1,38 +1,18 @@
 ---
-title: "Talks"
-layout: gridlay
-sitemap: false
+layout: page
 permalink: /talks/
-<!-- nav: true -->
+title: Talks
+description:
+years: [2022, 2021, 2020, 2019, 2018]
+nav: true
+nav_order: 2
 ---
+<!-- _pages/talks.md -->
+<div class="publications">
 
-<style>
-.btn{
-    margin-bottom:5px;
-    padding-top:1px;
-    padding-bottom:1px;
-    padding-left:15px;
-    padding-right:15px;
-}
-.jumbotron{
-    padding:3%;
-    padding-bottom:10px;
-    padding-top:10px;
-    margin-top:10px;
-    margin-bottom:30px;
-}
-</style>
+{%- for y in page.years %}
+  <h2 class="year">{{y}}</h2>
+  {% bibliography -f talks -q @*[talkyear={{y}}]* %}
+{% endfor %}
 
-
-- foo
-
-<div class="jumbotron">
-### Invited talks
-{% bibliography --query @incollection[keywords ^= invited] %}
-</div>
-
-
-<div class="jumbotron">
-### Regular talks
-{% bibliography --query @incollection[keywords != invited] %}
 </div>
