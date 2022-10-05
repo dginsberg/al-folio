@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 group :jekyll_plugins do
+		gem 'libv8-node'
+		gem 'sassc'
     gem 'jekyll'
     gem 'jekyll-archives'
     gem 'jekyll-diagrams'
